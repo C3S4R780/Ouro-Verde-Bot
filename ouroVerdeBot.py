@@ -37,6 +37,12 @@ async def sair(ctx):
         await ctx.guild.voice_client.disconnect()
     else:
         await ctx.send("Ainda não estou em nenhum canal de voz.")
+        
+# Command to list all existing commands
+@client.command()
+async def comandos(ctx):
+    await ctx.send("**!ov tocar** = Me chama para o canal de voz atual para tocar a rádio :D")
+    await ctx.send("**!ov sair** = Me remove do canal de voz :(")
 
 # Start bot
 client.run(BOTTOKEN)
