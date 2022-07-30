@@ -9,11 +9,6 @@ activity = nextcord.Activity(type=nextcord.ActivityType.listening, name="/tocar"
 intents = nextcord.Intents.all()
 client = commands.Bot(activity=activity, intents=intents)
 
-# Events
-@client.event
-async def on_ready():
-    os.system("cls")
-
 initial_extensions = []
 
 for filename in os.listdir("./cogs"):

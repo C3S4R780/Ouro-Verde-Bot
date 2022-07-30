@@ -7,11 +7,9 @@ class Music(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    server_id = 821937691167162379
-
     # Commands
     # Command to call the bot into voice chat and play the radio's audio
-    @nextcord.slash_command(name="tocar", description="Me chama para o canal de voz atual para tocar a rádio 😁", guild_ids=[server_id])
+    @nextcord.slash_command(name="tocar", description="Me chama para o canal de voz atual para tocar a rádio 😁")
     async def tocar(self, interaction: Interaction):
 
         if (interaction.user.voice):
@@ -41,7 +39,7 @@ class Music(commands.Cog):
             await interaction.response.send_message("✅ Tocando no canal: " + userVoiceChannel.name)
 
     # Command to remove the bot from the current voice channel
-    @nextcord.slash_command(name="sair", description="Me remove do canal de voz 😔", guild_ids=[server_id])
+    @nextcord.slash_command(name="sair", description="Me remove do canal de voz 😔")
     async def sair(self, interaction: Interaction):
         if (interaction.client.voice_clients):
             for client in interaction.client.voice_clients:
